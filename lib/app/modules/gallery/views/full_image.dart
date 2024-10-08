@@ -19,7 +19,7 @@ class FullImage extends StatelessWidget {
           height: MediaQuery.of(context).size.height,
           child: Image.network(
             imageUrl,
-            fit: BoxFit.none,
+            fit: BoxFit.contain,
           ),
         ),
       ),
