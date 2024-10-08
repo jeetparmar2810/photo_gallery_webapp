@@ -1,7 +1,6 @@
 import 'package:gallery/app/utils/export.dart';
 import 'package:get/get.dart';
 
-
 class GalleryScreen extends StatelessWidget {
   final GalleryController controller = Get.put(GalleryController());
 
@@ -31,7 +30,20 @@ class GalleryScreen extends StatelessWidget {
             crossAxisCount: calculateColumnCount(context),
             itemCount: controller.images.length,
             itemBuilder: (BuildContext context, int index) {
-              return ImageTile(controller.images[index]);
+              return
+                InkWell(
+                  onTap: () {
+                    showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return FullImage(
+                          imageUrl: controller.images[index]["webformatURL"], // Replace with your image URL
+                        );
+                      },
+                    );
+                  },
+                  child: ImageTile(controller.images[index])
+                );
             },
             staggeredTileBuilder: (int index) => const StaggeredTile.fit(1),
             mainAxisSpacing: Dimens.spacing_8,

@@ -14,4 +14,4 @@ export 'package:gallery/app/modules/gallery/views/gallery_screen.dart';
 export 'dart:io';
 export 'package:gallery/app/routes/app_pages.dart';
 export 'dimens.dart';
-
+export 'package:gallery/app/modules/gallery/views/full_image.dart';
